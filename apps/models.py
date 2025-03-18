@@ -6,6 +6,8 @@ from django.db import models
 class UserRole(models.TextChoices):
     SUPER_ADMIN = "super_admin", "Super Admin"
     PROJECT_MANAGER = "project_manager", "Project Manager"
+    AMERICAN_PROJECT = "american_project", "American Project"
+    BACKUP = "backup", "Backup"
     USER = "user", "User"
 
 
@@ -13,6 +15,8 @@ class UserRole(models.TextChoices):
 class UserType(models.TextChoices):
     ANALYST = "analyst", "Analyst"
     ENGINEER = "engineer", "Engineer"
+    AMERICAN_PROJECT = "american_project", "American Project"
+    USER = "user", "User"
 
 
 # CUSTOM USER MODEL
@@ -26,9 +30,10 @@ class User(AbstractUser):
     user_type = models.CharField(
         max_length=20,
         choices=UserType.choices,
-        default=UserType.ENGINEER,
-        help_text="Foydalanuvchi turi: Analyst yoki Engineer"
+        default=UserType.USER,
+        help_text="Foydalanuvchi turi: Analyst, Engineer, Amerika project larida yokida User"
     )
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.username} ({self.get_role_display()})"
