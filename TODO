@@ -1,0 +1,9 @@
+TASK
+
+✅
+1. Model bolaklash kerak
+2. jwt o'rnatish
+3. login, register apilari
+    3.1adminkaga email orqali kirish
+    3.2register qismi celery ishlatish
+    3.3register one-time link
