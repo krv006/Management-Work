@@ -21,7 +21,7 @@ This project is built using **Django** and **Django REST Framework (DRF)** to de
 
 ---
 
-## ⚙ Tech Stack
+## Tech Stack
 
 This project utilizes the following technologies:
 
