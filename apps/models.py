@@ -77,6 +77,7 @@ class TaskStatus(models.TextChoices):
     DONE = "done", "Done"
 
 
+
 # TASK MODEL
 class Task(models.Model):
     project = models.ForeignKey(
