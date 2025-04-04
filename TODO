@@ -8,6 +8,7 @@ TASK
     3.2register qismi celery ishlatish
     3.3register one-time link
 
+site_url -> https://avtoticket.uz/
 
 Site:
     https://avtoticket.uz/faq -> ✅
