@@ -27,3 +27,4 @@
 # #     list_display = 'project', 'title', 'assigned_to', 'status', 'created_at',
 # #     list_editable = 'status', 'assigned_to',
 # #     list_filter = 'title',
+
