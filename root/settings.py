@@ -17,9 +17,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # my package
+    # todo my package
     'apps',
-    # third party package
+    # todo third party package
     'rest_framework',
     'drf_spectacular',
 
@@ -95,5 +95,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# DRF settings
+# todo DRF settings
 from root.drf_settings import *
