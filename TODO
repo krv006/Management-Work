@@ -9,6 +9,12 @@ TASK
     3.3 register one-time link -
     3.4 is_active register dan kein true qib qoydirish kerak
 
+
+NEXT
+    1. LoginRequiredMixin -> qoshib qoyish
+
+
+
 site_url -> https://avtoticket.uz/
 
 Site:
