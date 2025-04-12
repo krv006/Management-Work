@@ -1,6 +1,5 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.hashers import make_password
-from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.fields import CharField, EmailField
 from rest_framework.serializers import ModelSerializer, Serializer

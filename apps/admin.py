@@ -1,3 +1,15 @@
+from django.contrib import admin
+from django.contrib.admin import ModelAdmin
+
+from apps.models import User
+
+
+@admin.register(User)
+class UserAdmin(ModelAdmin):
+    list_display = 'username', 'first_name', 'last_name', 'email', 'name', 'is_active',
+    list_editable = 'is_active',
+    list_filter = 'is_active',
+
 # from django.contrib import admin
 # from django.contrib.admin import ModelAdmin
 #
@@ -27,4 +39,3 @@
 # #     list_display = 'project', 'title', 'assigned_to', 'status', 'created_at',
 # #     list_editable = 'status', 'assigned_to',
 # #     list_filter = 'title',
-
