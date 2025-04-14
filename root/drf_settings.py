@@ -12,8 +12,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Book shop with drf',
-    'DESCRIPTION': 'Drf Book shop',
+    'TITLE': 'Api tasks',
+    'DESCRIPTION': 'Api tasks',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'COMPONENT_SPLIT_REQUEST': True,
