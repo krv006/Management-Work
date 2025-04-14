@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from apps.serializers import LoginUserModelSerializer
+
 from apps.views import LoginAPIView, UserRegisterCreateView, UserListAPIView
 
 urlpatterns = [
