@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.models import User
+
 from apps.serializers import RegisterUserModelSerializer, LoginUserModelSerializer, UserModelSerializer
 
 
