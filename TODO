@@ -3,11 +3,16 @@ TASK
 ✅
 1. Model bolaklash kerak ✅
 2. jwt o'rnatish ✅
+    2.1 JWT login-register ✅
+    2.2 Jwt access tokenga KAMRON ....(va u bergan token di qoyib yuborish)
 3. login, register apilari ✅
     3.1 adminkaga email orqali kirish
     3.2 register qismi celery ishlatish ✅
     3.3 register one-time link -
     3.4 is_active register dan kein true qib qoydirish kerak
+4. Admin panel ✅
+    4.1 admin da group di korib chiqish
+    4.2 admin da user_permission di korib chiqish
 
 
 NEXT
