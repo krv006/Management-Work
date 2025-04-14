@@ -13,7 +13,8 @@ TASK
 4. Admin panel ✅
     4.1 admin da group di korib chiqish
     4.2 admin da user_permission di korib chiqish
-
+5. Middleware yozish
+    5.1 admin, and super_admin
 
 NEXT
     1. LoginRequiredMixin -> qoshib qoyish
