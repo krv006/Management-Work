@@ -1,20 +1,28 @@
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'apps.auth.AuthPrefixJWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',),
-
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-
 }
-
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Api tasks',
-    'DESCRIPTION': 'Api tasks',
+    'TITLE': 'API Tasks',
+    'DESCRIPTION': 'API Tasks Description',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
-    'COMPONENT_SPLIT_REQUEST': True,
+    'SECURITY': [{'KamronAuth': []}],
+    'SECURITY_SCHEMES': {
+        'KamronAuth': {
+            'type': 'http',
+            'scheme': 'bearer',
+            'bearerFormat': 'Kamron <token>',
+            'description': 'Custom token auth using prefix: Kamron <token> or Bearer Kamron <token>',
+        },
+    },
+    'SWAGGER_UI_SETTINGS': {
+        'persistAuthorization': True,
+    },
 }
