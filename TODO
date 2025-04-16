@@ -5,6 +5,8 @@ TASK
 2. jwt o'rnatish ✅
     2.1 JWT login-register ✅
     2.2 Jwt access tokenga KAMRON ....(va u bergan token di qoyib yuborish) ✅ (xali chalasi bor)
+    (xammasi xal auth da korib chiqish kere code) ✅
+
 3. login, register apilari ✅
     3.1 adminkaga email orqali kirish
     3.2 register qismi celery ishlatish ✅
