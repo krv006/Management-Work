@@ -15,7 +15,7 @@ TASK
 4. Admin panel ✅
     4.1 admin da group di korib chiqish ✅
     4.2 admin da user_permission di korib chiqish ✅
-    4.3 admin ozidan data ni import qivolish kere xlsx and csv
+    4.3 admin ozidan data ni import qivolish kere xlsx and csv ✅ xlsx uchun aloxida yozish kere
 5. Middleware yozish
     5.1 admin, and super_admin
 
