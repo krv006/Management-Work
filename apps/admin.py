@@ -1,30 +1,30 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
-from import_export.admin import ExportActionMixin
+from import_export.admin import ExportActionMixin, ImportExportMixin
 
 from apps.models import User, SiteSettings, Question, Answer
 
 
 @admin.register(User)
-class UserAdmin(ExportActionMixin, ModelAdmin):
+class UserAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'username', 'first_name', 'last_name', 'email', 'name', 'is_active',
     list_editable = 'is_active',
     list_filter = 'is_active',
 
 
 @admin.register(SiteSettings)
-class SiteSettingsAdmin(ExportActionMixin, ModelAdmin):
+class SiteSettingsAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'region_to_region',
 
 
 @admin.register(Question)
-class QuestionAdmin(ExportActionMixin, ModelAdmin):
+class QuestionAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'text', 'created_at',
     list_filter = 'created_at',
 
 
 @admin.register(Answer)
-class AnswerAdmin(ExportActionMixin, ModelAdmin):
+class AnswerAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'text', 'question', 'created_at',
     list_filter = 'created_at',
 
