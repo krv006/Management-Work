@@ -1,8 +1,11 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
-from import_export.admin import ExportActionMixin, ImportExportMixin
+from import_export.admin import ImportExportMixin
 
-from apps.models import User, SiteSettings, Question, Answer
+from apps.forms import CustomAdminAuthenticationForm
+from apps.models import User, SiteSettings, Question, Answer, City, BusStation, BusCompany, Bus, Trip, Seat, Ticket
+
+admin.AdminSite.login_form = CustomAdminAuthenticationForm
 
 
 @admin.register(User)
@@ -28,32 +31,45 @@ class AnswerAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'text', 'question', 'created_at',
     list_filter = 'created_at',
 
-# from django.contrib import admin
-# from django.contrib.admin import ModelAdmin
-#
-# from apps.models import User, Project, Task
-#
-#
-# @admin.register(User)
-# class UserAdmin(ModelAdmin):
-#     list_display = 'username', 'role', 'user_type', 'created_at',
-#     list_editable = 'role', 'user_type',
-#     list_filter = 'role', 'user_type',
-#
-#
-# @admin.register(Project)
-# class ProjectAdmin(admin.ModelAdmin):
-#     list_display = "name", "manager", "manager", "display_team_members", "created_at",
-#     list_editable = "manager",
-#
-#     def display_team_members(self, obj):
-#         return ", ".join([user.username for user in obj.team_members.all()])
-#
-#     display_team_members.short_description = "Team Members"
-#
-#
-# @admin.register(Task)
-# class TaskAdmin(ModelAdmin):
-#     list_display = 'project', 'title', 'assigned_to', 'status', 'created_at',
-#     list_editable = 'status', 'assigned_to',
-#     list_filter = 'title',
+
+@admin.register(City)
+class CityAdmin(ImportExportMixin, ModelAdmin):
+    list_display = 'name',
+
+
+@admin.register(BusStation)
+class BusStationAdmin(ImportExportMixin, ModelAdmin):
+    list_display = 'name', 'city',
+    list_filter = 'city',
+
+
+@admin.register(BusCompany)
+class BusCompanyAdmin(ImportExportMixin, ModelAdmin):
+    list_display = 'name', 'contact_phone',
+
+
+@admin.register(Bus)
+class BusAdmin(ImportExportMixin, ModelAdmin):
+    list_display = 'company', 'model', 'seat_count', 'plate_number',
+    list_filter = 'company',
+
+
+@admin.register(Trip)
+class TripAdmin(ImportExportMixin, ModelAdmin):
+    list_display = 'bus', 'arrival_station', 'departure_station', 'departure_time', 'arrival_time', 'price',
+    list_filter = 'bus',
+
+
+@admin.register(Seat)
+class SeatAdmin(ImportExportMixin, ModelAdmin):
+    list_display = 'trip', 'seat_number', 'is_reserved',
+    list_filter = 'trip',
+
+
+@admin.register(Ticket)
+class TicketAdmin(ImportExportMixin, ModelAdmin):
+    list_display = 'user', 'trip', 'seat', 'booked_at', 'is_paid',
+    list_filter = 'user', 'trip', 'seat',
+
+
+admin.AdminSite.login_form = CustomAdminAuthenticationForm

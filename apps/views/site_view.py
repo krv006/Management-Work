@@ -1,6 +1,6 @@
 from drf_spectacular.utils import extend_schema
 from rest_framework.generics import ListCreateAPIView
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny
 
 from apps.models import SiteSettings, Question, Answer
 from apps.serializers import SiteModelSerializer, QuestionModelSerializer, AnswerModelSerializer
