@@ -23,24 +23,37 @@ class Command(BaseCommand):
         parser.add_argument('--tickets', type=int, default=20)
 
     def handle(self, *args, **options):
-        cities = [City.objects.create(name=self.f.city()) for _ in range(options['cities'])]
+        cities = [City.objects.create(
+            name=self.f.city()
+        )
+            for _ in range(options['cities'])]
 
-        stations = [BusStation.objects.create(name=self.f.street_name(), city=choice(cities))
-                    for _ in range(options['stations'])]
+        stations = [
+            BusStation.objects.create(
+                name=self.f.street_name(),
+                city=choice(cities)
+            )
+            for _ in range(options['stations'])]
 
-        companies = [BusCompany.objects.create(name=self.f.company(),
-                                               contact_phone=f'+998{randint(900000000, 999999999)}')
-                     for _ in range(options['companies'])]
+        companies = [BusCompany.objects.create(
+            name=self.f.company(),
+            contact_phone=f'+998{randint(900000000, 999999999)}'
+        )
+            for _ in range(options['companies'])]
 
-        buses = [Bus.objects.create(company=choice(companies),
-                                    model=self.f.word(),
-                                    seat_count=randint(20, 60),
-                                    plate_number=self.f.license_plate())
-                 for _ in range(options['buses'])]
+        buses = [Bus.objects.create(
+            company=choice(companies),
+            model=self.f.word(),
+            seat_count=randint(20, 60),
+            plate_number=self.f.license_plate()
+        )
+            for _ in range(options['buses'])]
 
-        users = [User.objects.create(email=self.f.email(),
-                                     password=make_password('password123'))
-                 for _ in range(options['users'])]
+        users = [User.objects.create(
+            email=self.f.email(),
+            password=make_password('password123')
+        )
+            for _ in range(options['users'])]
 
         trips = []
         for _ in range(options['trips']):
