@@ -69,4 +69,4 @@ class Command(BaseCommand):
             user = choice(users)
             Ticket.objects.create(user=user, trip=trip, seat=seat, is_paid=self.f.boolean())
 
-        self.stdout.write(self.style.SUCCESS("Fake data successfully created!"))
+        self.stdout.write(self.style.SUCCESS("Fake data qoshildi"))
