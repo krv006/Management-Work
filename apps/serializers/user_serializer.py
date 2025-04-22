@@ -1,4 +1,3 @@
-from django.contrib.auth import authenticate
 from django.contrib.auth.hashers import make_password
 from rest_framework.exceptions import ValidationError
 from rest_framework.fields import CharField, EmailField
@@ -33,12 +32,18 @@ class LoginUserModelSerializer(Serializer):
     def validate(self, attrs):
         email = attrs.get('email')
         password = attrs.get('password')
-        user = authenticate(username=email, password=password)
-        if user is None:
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
             raise ValidationError("Invalid email or password")
+
+        if not user.check_password(password):
+            raise ValidationError("Invalid email or password")
+        if not user.is_active:
+            user.is_active = True
+            user.save(update_fields=['is_active'])
         attrs['user'] = user
         return attrs
-
 
 
 class UserModelSerializer(ModelSerializer):
