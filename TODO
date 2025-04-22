@@ -4,11 +4,11 @@ TASK
 1. Model bolaklash kerak ✅
 2. jwt o'rnatish ✅
     2.1 JWT login-register ✅
-    2.2 Jwt access tokenga KAMRON ....(va u bergan token di qoyib yuborish) ✅ (xali chalasi bor)
+    2.2 Jwt access tokenga KAMRON ....(va u bergan token di qoyib yuborish) ✅ (xali chalasi bor) ✅
     (xammasi xal auth da korib chiqish kere code) ✅
 
 3. login, register apilari ✅
-    3.1 adminkaga email orqali kirish
+    3.1 adminkaga email orqali kirish ✅
     3.2 register qismi celery ishlatish ✅
     3.3 register one-time link -
     3.4 is_active register dan kein true qib qoydirish kerak ✅
@@ -22,7 +22,7 @@ TASK
     5.1 admin, and super_admin
 
 6. Faker yozish kerak
-    6.1 Xamma Model lar uchun
+    6.1 Xamma Model lar uchun ✅
 
 NEXT
     1. LoginRequiredMixin -> qoshib qoyish
