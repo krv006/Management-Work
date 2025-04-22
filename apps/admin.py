@@ -13,7 +13,7 @@ class UserAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'username', 'first_name', 'last_name', 'email', 'name', 'is_active',
     list_editable = 'is_active',
     list_filter = 'is_active',
-
+    ordering = '-is_active',
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(ImportExportMixin, ModelAdmin):
@@ -24,12 +24,14 @@ class SiteSettingsAdmin(ImportExportMixin, ModelAdmin):
 class QuestionAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'text', 'created_at',
     list_filter = 'created_at',
+    ordering = '-created_at',
 
 
 @admin.register(Answer)
 class AnswerAdmin(ImportExportMixin, ModelAdmin):
     list_display = 'text', 'question', 'created_at',
     list_filter = 'created_at',
+    ordering = '-created_at',
 
 
 @admin.register(City)
