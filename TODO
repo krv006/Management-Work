@@ -27,6 +27,7 @@ TASK
 NEXT
     1. LoginRequiredMixin -> qoshib qoyish
 
+    pylintrc
 
 
 site_url -> https://avtoticket.uz/
