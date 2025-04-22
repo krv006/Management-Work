@@ -19,7 +19,7 @@ class UserRegisterCreateView(CreateAPIView):
 @extend_schema(tags=['user'])
 class LoginAPIView(GenericAPIView):
     serializer_class = LoginUserModelSerializer
-    permission_classes = (AllowAny,)
+    permission_classes = AllowAny,
     authentication_classes = []
 
     def post(self, request, *args, **kwargs):
