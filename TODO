@@ -11,7 +11,7 @@ TASK
     3.1 adminkaga email orqali kirish
     3.2 register qismi celery ishlatish ✅
     3.3 register one-time link -
-    3.4 is_active register dan kein true qib qoydirish kerak
+    3.4 is_active register dan kein true qib qoydirish kerak ✅
 
 4. Admin panel ✅
     4.1 admin da group di korib chiqish ✅
