@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'import_export',
     'silk',
     'django_ckeditor_5',
+    "debug_toolbar",
 
 ]
 
@@ -41,6 +42,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'silk.middleware.SilkyMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'root.urls'
@@ -111,3 +113,8 @@ from root.ckeditor import *
 SILKY_MIDDLEWARE_CLASS = 'path.to.your.middleware.MyCustomSilkyMiddleware'
 
 SILK_ENABLED = True
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "localhost:8000",
+]
