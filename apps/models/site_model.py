@@ -1,4 +1,5 @@
 from django.db.models import CharField, DateTimeField, Model, ForeignKey, TextField, CASCADE
+from django_ckeditor_5.fields import CKEditor5Field
 
 from apps.models import TimeBasedModel
 
@@ -17,7 +18,7 @@ class Question(Model):
 
 class Answer(Model):
     question = ForeignKey('apps.Question', CASCADE, related_name="answers", verbose_name="Savol")
-    text = TextField(verbose_name="Javob matni")
+    text = CKEditor5Field(verbose_name="Javob matni")
     created_at = DateTimeField(auto_now_add=True, verbose_name="Yaratilgan vaqt")
 
     def __str__(self):

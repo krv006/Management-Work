@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'import_export',
     'silk',
+    'django_ckeditor_5',
+
 ]
 
 MIDDLEWARE = [
@@ -104,6 +106,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # todo DRF settings
 from root.drf_settings import *
 from root.jwt_settings import *
+from root.ckeditor import *
 
 SILKY_MIDDLEWARE_CLASS = 'path.to.your.middleware.MyCustomSilkyMiddleware'
 
