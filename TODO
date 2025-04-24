@@ -29,6 +29,7 @@ NEXT
 
     pylintrc
 
+req.txt ✅
 
 site_url -> https://avtoticket.uz/
 
